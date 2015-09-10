@@ -11,7 +11,7 @@ function add_game(name_value){
    new_li.innerText = name_value; 
 	game_unordered_list.appendChild(new_li);
 	new_li.innerText = name_value; 
-	new_li.classList.toggle("game_list_item_item");
+	new_li.classList.toggle("game_list_item");
 };
 
 function get_event_target(event_name) {
@@ -50,14 +50,22 @@ add_submit.addEventListener('click',function(){
 function make_minus(target){
 	if (target.parentNode == game_unordered_list){
 		if (target.children.length == 0){
-			if (target != target_parent.children[0])
+			if (target != target_parent.children[0]){
 			var new_minus = document.createElement('button');
 		  	target.appendChild(new_minus);
 			new_minus.innerText = "-"; 
 			new_minus.classList.toggle("minus");
+			}
+		}else{
+			target.removeChild(target.childNodes[1]);
 		}
 	}
 };
+
+document.getElementsByClassName('minus')[0].onclick = function(){
+	alert("hi")
+document.getElementsByClassName('minus')[0].parentNode.removeChild(document.getElementsByClassName('minus')[0].parentNode)
+}
 
 
 
