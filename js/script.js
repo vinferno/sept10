@@ -1,5 +1,5 @@
 var game_unordered_list = document.getElementsByClassName('game_unordered_list')[0];
-var game_list_item_item = game_unordered_list.children;
+var game_list_item = game_unordered_list.children;
 var add_submit = document.getElementById('add_submit_button');
 
 function add_game(name_value){
@@ -48,11 +48,16 @@ add_submit.addEventListener('click',function(){
 });
 
 function make_minus(target){
-	var new_minus = document.createElement('button');
-  	target.appendChild(new_minus);
-	new_minus.innerText = "-"; 
-	new_minus.classList.toggle("minus");
-}
+	if (target.parentNode == game_unordered_list){
+		if (target.children.length == 0){
+			if (target != target_parent.children[0])
+			var new_minus = document.createElement('button');
+		  	target.appendChild(new_minus);
+			new_minus.innerText = "-"; 
+			new_minus.classList.toggle("minus");
+		}
+	}
+};
 
 
 
