@@ -83,13 +83,13 @@ li:hover {
 	float:left;
 	height: 100%;
 	width: 60px;
+  font-size: 130%;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px){
   ul {
     width: 100%;
   }
-
   li {
     width: 100%;
   }
