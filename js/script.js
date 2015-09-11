@@ -55,17 +55,27 @@ function make_minus(target){
 		  	target.appendChild(new_minus);
 			new_minus.innerText = "-"; 
 			new_minus.classList.toggle("minus");
+			add_minus_listener(target);
 			}
-		}else{
-			target.removeChild(target.childNodes[1]);
 		}
 	}
 };
 
-document.getElementsByClassName('minus')[0].onclick = function(){
-	alert("hi")
-document.getElementsByClassName('minus')[0].parentNode.removeChild(document.getElementsByClassName('minus')[0].parentNode)
-}
+   
+
+    var function_minus = function(event) {
+        var target = get_event_target(event)
+       
+		target.removeChild(target);
+        alert("function_minus");
+    };
+
+    var add_minus_listener = function(){
+		var class_minus = document.getElementsByClassName("minus");
+	    for(var i=0;i<class_minus.length;i++){
+	        class_minus[i].addEventListener('click', function_minus, false);
+	    }
+	}
 
 
 
